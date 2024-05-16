@@ -52,5 +52,5 @@
         "Temp/": true
     },
     "dotnet.preferCSharpExtension": true,
-    "dotnet.defaultSolution": "Retro Wave Experiment.sln"
+    "dotnet.defaultSolution": "Retro_Wave.sln"
 }

@@ -11,13 +11,14 @@ public class AudioVisualizer : MonoBehaviour
     [SerializeField] private AudioSource levelMusicSource;
 
     private float[] clipSampleData;
+    private float sizeFactor;
 
     void Awake()
     {
         clipSampleData = new float[sampleDataLength];
     }
 
-    void Update()
+    void FixedUpdate()
     {
         sizeFactor = Random.Range(2.5f, 6f);
 
