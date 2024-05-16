@@ -20,7 +20,7 @@ public class AudioVisualizer : MonoBehaviour
 
     void FixedUpdate()
     {
-        sizeFactor = Random.Range(2.5f, 6f);
+        sizeFactor = Random.Range(1.5f, 6f);
 
 
         //Note: This code is performance heavy, use burst compiler, or threads or some time delay (0.01f) to reduce the performance cost
@@ -45,7 +45,9 @@ public class AudioVisualizer : MonoBehaviour
 
         clipLoudness = Mathf.Clamp(clipLoudness, minSize, maxSize); //Finding the y scale of the object based on clip samples.
 
-        transform.localScale = new Vector3(transform.localScale.x, clipLoudness, transform.localScale.z);
+        Vector3 newScale =  new Vector3(transform.localScale.x, clipLoudness, transform.localScale.z);
+
+        transform.localScale = Vector3.Lerp(transform.localScale, newScale, Time.fixedDeltaTime * 5);
     }
 
     public void SetAudioSource(AudioSource audioSource)
