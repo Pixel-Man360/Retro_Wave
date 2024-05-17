@@ -7,11 +7,12 @@ public class AudioVisualizer : MonoBehaviour
     [SerializeField] private int sampleDataLength = 1024;
     [SerializeField] private float minSize = 0.4f;
     [SerializeField] private float maxSize = 2.5f;
-    [SerializeField] private float clipLoudness;
+    [SerializeField] private float lerpSpeed;
     [SerializeField] private AudioSource levelMusicSource;
 
     private float[] clipSampleData;
     private float sizeFactor;
+    private float clipLoudness;
 
     void Awake()
     {
@@ -47,7 +48,7 @@ public class AudioVisualizer : MonoBehaviour
 
         Vector3 newScale =  new Vector3(transform.localScale.x, clipLoudness, transform.localScale.z);
 
-        transform.localScale = Vector3.Lerp(transform.localScale, newScale, Time.fixedDeltaTime * 5);
+        transform.localScale = Vector3.Lerp(transform.localScale, newScale, Time.fixedDeltaTime * lerpSpeed);
     }
 
     public void SetAudioSource(AudioSource audioSource)

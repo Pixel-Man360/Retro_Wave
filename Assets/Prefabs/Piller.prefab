@@ -130,12 +130,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ca601da0a8bf1ee40a2ca8dda4b6a04d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  updateStep: 0.01
   sampleDataLength: 1024
-  sizeFactor: 0.1
   minSize: 0.01
   maxSize: 1.5
-  clipLoudness: 0
+  lerpSpeed: 25
   levelMusicSource: {fileID: 0}
 --- !u!114 &8035705015101300430
 MonoBehaviour:
